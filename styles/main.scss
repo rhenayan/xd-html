@@ -1,0 +1,1191 @@
+@import 'sass/layouts/centering';
+@import 'sass/config/reset';
+@import 'sass/utilities/image';
+@import 'sass/utilities/dimension';
+@import 'sass/layouts/breakpoints';
+@import 'sass/utilities/background';
+@import 'sass/utilities/borders';
+@import 'sass/utilities/positioning';
+@import 'sass/utilities/spacing';
+@import 'sass/utilities/typography';
+@import 'sass/layouts/flex';
+@import 'sass/utilities/transition';
+@import 'sass/utilities/colors';
+
+
+
+/****GENERAL STYLING****/
+
+* {
+    @include reset(spacing);
+    @include reset(pseudo);
+  
+}
+
+
+html {
+    font-family: $default-font;
+    font-size:$base;
+    user-select: none;
+    
+}
+
+body {
+    @include body-dimension($max-width:1920px);
+    background-color: $body-main-bg-color;
+
+
+}
+
+ul {
+    @include reset(list);
+
+}
+
+a {
+    @include reset(anchor);
+}
+
+
+/**Typography**/
+
+@include reset(heading);
+
+h2 {
+    font-size: $fsize-heading-sm; 
+    @include mq(large) {
+        font-size: $fsize-heading-lg;
+    }
+}
+
+h3 {
+    font-size: $fsize-body-sm;
+    @include mq(large) {
+        font-size: $fsize-body-lg;
+    }
+}
+
+p {
+    font-size: $fsize-subheading-sm;
+    @include mq(large) {
+        font-size: $fsize-subheading-lg;
+    }
+}
+
+hr {
+    opacity: 1;
+}
+
+.btn {
+    @include space(padding, all, $amount: 1.2rem, $amount-sec: 2rem);
+    @include fsize(1.5rem);
+    display:inline-block;
+    border-radius: 10px;
+    background-color:$btn-bg-color;
+    color: $dark-main-color;
+
+    @include mq(large) {
+        @include space(padding, all, 2.4rem, 6.7rem);
+    }
+
+}
+/*====MOBILE FIRST APPROACH===*/
+/**NAVBAR MENU**/
+.navbar {
+    @include flex-direction(row);
+    @include space(padding, all, $sm);
+    @include fsize($fsize-navLinks-sm);
+   
+   
+    
+    .menu-items {
+        // @include fsize($fsize-navLinks-sm);
+      
+        @include flex-center(column, both);
+    
+       
+    }
+   
+    .nav-link {
+        @include space(margin, y, 1rem);
+    
+        &:nth-of-type(1) {
+            margin-top: 2rem;
+        }
+        
+    }
+
+    .contact-info {
+            @include space(margin, y, $md);
+        img {
+            border: 1px solid $border-color;
+            padding: .9rem;
+            margin-right: .5rem;
+            border-radius: 50%;
+            
+        }
+
+        &.center {
+            text-align:center;
+        }
+    }
+
+    .hide {
+        display:none;
+    }
+
+
+    @include mq(xLarge) {
+        padding: 0;
+        justify-content: space-between;
+        height: 7rem;
+        color: $nav-desktop-color;
+        
+        .logo-link {
+            @include space(margin, x, 14rem);
+            
+                
+      }
+
+      .menu-items {
+          flex-direction:row;
+        //   margin-right: 22rem;
+          background-color: $nav-bg-desktop;
+      }
+
+      .nav-link {
+        @include space(margin, x, 2rem);
+        &:nth-of-type(1) {
+            margin-top: 0;
+        }
+      }
+
+      .contact-info {
+          margin-left: 13rem;
+      }
+    }
+
+    @include mq(xxLarge) {
+
+        .contact-info {
+            margin-left: 22rem;
+        }
+    }
+}
+
+
+
+.hero {
+    @include component-dimension($height:600px);
+    @include flex-center(column, vertical);
+    @include backgroundImage('../assets/images', 'hero-bg-mob.png', cover);
+    // background-image:url(../assets/images/hero-bg-mob.png);
+    // background-size:cover;
+    // background-repeat: no-repeat;
+    // background-position:center;
+
+    color: $light-main-color;
+   
+
+    .call-to-action {
+        @include space(margin, x, $md);
+        text-transform:capitalize;
+        
+        
+       
+
+        p {@include fsize(1.5rem); @include space(margin, bottom, 1rem);}
+
+        h1 {
+            @include fsize(3.7rem);
+            font-weight: $f-weight-normal;
+        }
+
+        .get-started {@include space(margin, top, 5rem);}
+     
+    }
+
+    
+    .sidebar-socmed {
+            display:none;
+    }
+
+    @include mq(large) {
+        height: 916px;
+        background-image:url(../assets/images/hero-bg-desk.png);
+        // background-size:cover;
+        // background-repeat: no-repeat;
+        // background-position:center;
+        position:relative;
+
+        .call-to-action {
+            margin: 24rem 22rem;
+
+            p {font-size: 3rem;}
+            h1 {font-size:$fsize-hero-lg;}
+            .get-started {font-size: 3rem;}
+        }
+
+        .sidebar-socmed {
+            display:block;
+            @include abs-position($all:false, $left:0, $bottom: 33px);
+            background-color: $light-secondary-color;
+            z-index: 100;
+
+            img {
+                display:block;
+                @include space(padding, all, 27px 17px);
+               border-bottom: 1px solid $border-color;
+
+               &:nth-child(2) {
+                  padding: 2.7rem 2.2rem;
+               }
+            }
+        }
+    }
+
+}
+
+
+
+.programs-container {      
+
+    @include space(padding, top, 10.9rem,);
+       @include flex-center(column, horizontal);
+     
+    
+    .program {
+        @include component-dimension(476px, 283px);
+        @include flex-center(column, both);
+        @include space(margin, bottom, 2.1rem);
+        color: $light-main-color;
+        text-align:center;
+        
+        h2 {
+            @include fsize($fsize-body-sm, 0.3px);
+            @include reset(heading);
+            
+        }
+        
+        p {
+            @include fsize($fsize-subheading-sm, 0.4px);
+            @include space(margin, top, .5rem);
+        }
+
+        .price {
+            @include space(padding, all, 1rem, 4rem);
+            font-weight: $f-weight-bold;
+            @include fsize(1.5rem, 0.15px);
+            @include space(margin, top, 2.6rem);
+
+            &.classic {
+                background-color: $orange;
+            }
+
+            &.standard {
+                background-color: $violet;
+            }
+
+            &.premium {
+                background-color: $skyblue;
+            }
+        }
+
+        
+        &.classic {
+            @include backgroundImage('../assets/images', 'classic-mob.png', center);
+
+        }
+
+        &.standard {
+            @include backgroundImage('../assets/images', 'standard-mob.png', center)
+        }
+
+        &.premium {
+            @include backgroundImage('..assets/images', 'premium-mob.png', center)
+        }
+        
+    }
+
+
+    @include mq(large) {
+        // width: 1428px;
+        
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 0;
+        @include space(padding, all, 10.9rem);
+
+        .program {
+            margin-right: 2.1rem;
+
+            h2 {
+                font-size: $fsize-body-lg;
+            }
+
+            p {
+                font-size: $fsize-subheading-lg;
+            }
+
+            &.classic {
+                background-image:url(../assets/images/classic-desk.png);
+            
+    
+            }
+    
+            &.standard {
+                background-image:url(../assets/images/standard-desk.png);
+            }
+    
+            &.premium {
+                background-image:url(../assets/images/premium-desk.png);
+            }
+        }
+
+
+    }
+ 
+}
+
+.about-main {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: $sm;
+    @include space(margin, top, 25rem);
+  
+    > * {
+        grid-column: 1 / span 2;
+    }
+
+    .text {
+        @include space(padding, x, $sm);
+
+        p {
+            @include fsize(1.5rem, 0.6rem, 2.5, $f-weight-bold);
+            text-transform: uppercase;
+            color: $orange;   
+        }
+
+        h2 {
+            position:relative;
+
+           &::before {
+               content:'';
+               @include abs-position(false, $bottom:-1.2rem, $left: 0);
+               width: 84px;
+               border: 2px solid $skyblue;
+               background-color: $skyblue;
+           } 
+        }
+
+        h3 {
+            @include space(margin, top, 5.9rem);
+            color: $orange;
+
+            .p-gray {
+                color: $gray;
+                display:block;
+                @include space(margin,top, 4.5rem);
+            }
+        }
+
+        .read-more {
+            @include space(margin, top, 4.9rem);
+            @include space(padding, all, 1.4rem, 3rem);
+        }
+    }
+
+
+    .woman {
+            width: 100%;
+            height: 438px;
+            // @include space(margin, y, $xs);
+
+            &.one {
+                @include backgroundImage('../assets/images', 'about-woman1-mob.png', center);
+            }
+
+            &.two {
+                @include backgroundImage('../assets/images', 'about-woman2-mob.png', center);
+            }
+
+            &.three {
+                @include backgroundImage('../assets/images', 'about-woman3-mob.png', center);
+            }
+
+        }
+
+        @include mq(medium) {
+            
+            .text {
+                grid-column: 1 / 2;
+                @include space(padding, x, $md);
+
+            }
+
+            .woman{
+
+                &.one {
+                    grid-column: 2 / 3;
+                    grid-row: 1;
+                    height: 556px;
+                    align-self: center;
+                }
+
+                &.two {
+                    grid-column: 1 / 2;
+                    grid-row: 2;
+                }
+
+                &.three{
+                    grid-column: 2 / 3;
+                    grid-row: 2;
+                }
+            }
+        }
+        
+        @include mq(xLarge) {
+            height: 936px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            @include space(margin,all, 5rem);
+           
+
+            .text {
+                
+                h2 {
+                    &::before {
+                       width: 168px;
+                    }
+                }
+            }
+           
+    
+            .woman {
+                width: 380px;
+                
+               
+                &.one {
+                    grid-column: 2 / 3;
+                    grid-row: 1 ;
+                    justify-self: end;
+                    background-image:url(../assets/images/about-woman1-desk.png);
+                }
+
+                &.two {
+                    grid-column: 3 / 4;
+                    grid-row: 1;
+                    align-self: start;
+                    background-image:url(../assets/images/about-woman2-desk.png);
+                }
+
+                &.three {
+                    grid-column:  3/ 4;
+                    grid-row: 1;
+                    align-self: end;
+                    background-image:url(../assets/images/about-woman3-desk.png);
+                }
+            }
+
+        }
+}
+
+.intro {
+    height: auto;
+    background-color: $body-second-bg-color;
+    color: $light-main-color;
+    @include flex-center(column, both);
+    @include space(padding, all, $sm);
+    @include space(margin, top, 15rem);
+
+    h2 {
+        @include space(padding, top, 11.2rem);
+
+    }
+
+    hr {
+        width: 128px;
+        height: 2px;
+        color: $spacer-color-dark;
+    }
+
+    h3 {
+        
+        margin-top: 4.3rem;
+        margin-bottom: 12.5rem;
+        @include space(padding, x, $xs);
+        text-align:center;
+        line-height: 1.5;
+
+        @include mq(large) {
+            @include space(padding, x, $lg);
+        }
+
+    }
+
+   
+}
+
+
+.classes-card-wrapper {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+  
+
+    > * {
+        grid-column: 1 / span 3;
+        @include component-dimension(646px, 400px);
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .card {
+        @include backgroundImage('../assets/images', 'cardio-fitness-mob.png', center);
+        position:relative;
+
+
+        &.gymnastic {
+            background-image:url(../assets/images/advanced-gym-mob.png);
+            @include flex-center(column, vertical);
+
+        }
+
+        &.cycle {
+            background-image: url(../assets/images/cycling-mob.png);
+        }
+
+        &.body {
+            background-image: url(../assets/images/body-attack-mob.png);
+        }
+
+        &.yoga {
+            background-image: url(../assets/images/yoga-mob.png);
+        }
+
+        &.weight {
+            background-image:url(../assets/images/weight-lifting-mob.png);
+        }
+
+        .card-heading {
+            @include component-dimension(100%, 119px);
+            @include flex-center(row, both);
+            @include abs-position(false, $bottom: -10px);
+            @include fsize(2.5rem);
+            color: $light-main-color;
+            background-color: rgba($dark-main-color, 0.5);
+
+
+            &.advanced-gymnastic {
+              
+                @include component-dimension(500px, 377px);
+                margin: 0 auto;
+                position:static;
+                flex-direction:column;
+                background-color: rgba($skyblue, 0.5);
+                text-align:center;
+
+                h2 {
+                    @include space(padding, x, $sm);
+                    @include fsize($fsize-card-heading-sm);
+
+    
+                }
+
+                p {
+                    @include space(margin, top, 4.0rem);
+                }
+            }
+
+            hr {
+                width: 162px;
+                color: $spacer-color-light;
+                @include space(margin, top, 1.2rem);
+               
+            }
+
+            .card-btn {
+                font-size: 1.5rem;
+                @include space(padding, all, 1.4rem, 5rem);
+                @include space(margin, top, 1.7rem);
+                border-radius: 25px;
+                background-color: $btn-bg-secondary;
+                color: $dark-main-color;
+        
+            }
+
+        }    
+    }
+
+    @include mq(medium) {
+
+        
+        .cardio {
+            grid-column: 1 / 2;
+            grid-row: 1;
+        }
+
+        .gymnastic {
+            grid-column:  2 / 3;
+            grid-row: 1;
+        }
+
+
+        .cycle {
+            grid-column: 3 / 4;
+            grid-row: 1;
+        }
+
+        .body {
+            grid-column: 1 / 2;
+            grid-row: 2;
+        }
+
+        .yoga {
+            grid-column: 2 / 3;
+            grid-row: 2;
+        }
+
+        .weight {
+            grid-column: 3 / 4;
+            grid-row: 2;
+        }
+
+        .card {
+            .card-heading{
+
+                &.advanced-gymnastic {
+                    width: 80%;
+                    height: 350px;
+                }
+
+                hr {
+                    width: 80px;
+                }
+            }
+        }
+
+        p {
+            @include space(padding, x, $md);
+        }
+    }
+
+
+    @include mq(xLarge) {
+
+        .card {
+
+            background-image:url(../assets/images/cardio-fitness-desk.png);
+
+            &.gymnastic {
+                background-image:url(../assets/images/advanced-gym-desk.png);
+               
+    
+            }
+    
+            &.cycle {
+                background-image: url(../assets/images/cycling-desk.png);
+            }
+    
+            &.body {
+                background-image: url(../assets/images/body-attack-desk.png);
+            }
+    
+            &.yoga {
+                background-image: url(../assets/images/yoga-desk.png);
+            }
+    
+            &.weight {
+                background-image:url(../assets/images/weight-lifting-desk.png);
+            }
+
+            
+            .card-heading {
+                font-size: $fsize-card-heading-lg;
+
+                &.advanced-gymnastic{
+                    h2 {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }    
+    }
+}
+
+
+.team-white {
+    background-color: $body-main-bg-color;
+    color: $dark-main-color;
+    @include space(margin, top, 15rem);
+    
+   
+
+    h3 {
+        @include space(padding, x, $sm);
+        text-align: unset;
+
+        @include mq(large) {
+            @include space(padding, x, $lg);
+        }
+        @include mq(xxLarge) {
+            @include space(padding, x, 25rem);
+        }
+    }
+
+}
+
+
+
+.team-members {
+    @include flex-center(row, horizontal);
+    flex-wrap:wrap;
+    width: 100%;
+
+    
+
+    figure {
+        @include space(margin, all, 3.3rem);
+       
+
+        box-shadow: 0px 3px 6px $box-shadow-color;
+
+        .member-img {
+            @include component-dimension(461px, $height:auto);
+
+        }
+
+        figcaption {
+            text-align:center;
+            @include space(margin, y, 2.6rem);
+
+            p {
+                @include fsize($fsize-card-heading-sm);
+                color: $card-name-color;
+            }
+
+            h3 {
+                color: rgba($card-name-color, 0.8);
+            }
+    
+            .icons-socmed {
+                @include space(margin, y, 1.1rem);
+                img {
+                    @include space(margin, right, 2.2rem);
+                }
+            }
+        }
+
+      
+    }
+}
+
+
+.team-btn-center {
+    width: 100%;
+    text-align:center;
+
+    .team-btn {
+        @include fsize($fsize-btn);
+        @include space(padding, all, 2rem, 5rem);
+        @include space(margin, y, 2.3rem);
+        background-color: $btn-bg-color;
+        
+        
+    }
+}
+
+
+
+.testimonial {
+    background-color: $body-second-bg-color;
+    color: $light-main-color;
+    text-align:center;
+    @include space(margin, top, 20rem);
+    
+    h2 {
+       
+        @include space(padding, top, 12.5rem);
+        @include space(margin, bottom, 1.6rem);
+    }
+
+  
+        hr {
+            width: 128px;
+            height: 2px;
+            color: $spacer-color-dark;
+            margin: auto;
+
+            
+        }
+    
+
+    .testimonial-inner {
+        @include space(margin, top, 9rem);
+        @include space(padding,bottom, 9.4rem);
+       
+
+    }
+
+
+    .carousel-indicators [data-bs-target] {
+        width:6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: 
+        $carousel-indicator;
+    }
+
+    .carousel-control-next-icon {
+        background-image: url(../assets/icons/right-arrow.svg);
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url(../assets/icons/left-arrow.svg)
+    }
+
+    h3 {
+        @include space(padding, x, $md);
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        text-align:center;
+        @include space(margin, y, 2.4rem);
+    }
+
+    p {
+        padding-bottom: 2.9rem;
+    }
+
+
+    @include mq(medium) {
+        h3{
+            @include space(padding, x, $xxl);
+        }
+    }
+
+    @include mq(xLarge) {
+        h3{
+            @include space(padding, x, 20rem);
+        }
+    }
+  
+}
+
+
+.news {
+
+    @include flex-center(column, horizontal);
+    @include space(margin, top, 17rem);
+
+    hr {
+        width: 128px;
+        height: 2px;
+        color: $spacer-color-dark;
+        text-align:center;
+    }
+
+    .news-flex-wrap {
+
+        @include flex-center(row, horizontal);
+        flex-wrap:wrap;
+        @include space(margin, top, 8rem);
+    }
+
+    .news-card {
+       @include component-dimension(390px, auto);
+       @include space(padding, x, 3rem);
+       @include space(margin, bottom, 2.7rem);
+       background-color: $card-bg-color;
+       color: $muted;
+
+       @include mq(medium){
+           @include space(margin, all, 2.7rem);
+       }
+
+    }
+
+    .card-image {
+        @include component-dimension(330px, 219px);
+        margin: auto;
+        @include space(margin, top, 2.4rem);
+
+    
+        &.left {
+            @include backgroundImage('../assets/images/','marathon-mob.png', center);
+        }
+
+        &.middle {
+            @include backgroundImage('../assets/images/','workout-kettlebell-mob.png', center);
+        }
+
+        &.right {
+           
+                @include backgroundImage('../assets/images/','running-track-mob.png', center);
+            
+        }
+
+        @include mq(large) {
+
+            &.left {
+                @include backgroundImage('../assets/images/','marathon-desk.png', center);
+            }
+    
+            &.middle {
+                @include backgroundImage('../assets/images/','workout-kettlebell-desk.png', center);
+            }
+    
+            &.right {
+               
+                    @include backgroundImage('../assets/images/','running-track-desk.png', center);
+                
+            }
+        }
+    }
+
+    p {
+        @include space(margin, top, 4.5rem);
+    }
+
+    .card-title {
+        color: $skyblue;
+    }
+
+    .card-main {
+        @include space(margin, y, 1.5rem, 3.3rem);
+    }
+
+    .card-footer-wrapper {
+        @include space(padding, bottom, 3.8rem);
+    }
+
+    .card-footer-margin {
+        @include space(margin, right, 1.6rem);
+    }
+    span{
+        font-size: 14px;
+    }
+
+
+
+    .news-btn {
+        @include fsize(2rem);
+        @include space(margin, top, 9rem);
+        
+
+        @include mq(xLarge) {
+            @include space(padding, all, 1.5rem, 5.5rem);
+        }
+    }
+  
+}
+
+
+.contacts {
+    background-color: $body-second-bg-color;
+    color:$light-main-color;
+    width: 100%;
+    @include flex-center(column, horizontal);
+    @include space(margin, top, 25rem);
+
+
+  .contact-form {
+    
+    @include component-dimension(581px, $height: auto);
+    @include space(padding, x, $lg);
+   
+    h2 {
+       
+        @include space(padding, top, 17rem);
+    }
+
+    hr {
+        width: 128px;
+        height: 2px;
+        color: $spacer-color-dark;
+        margin-top: 1.9rem;
+        margin-bottom: 6.9rem;
+        
+    }
+
+    input, textarea, button {
+        display:block;
+        width: 100%;
+        border: 1px solid $outline-main-color;
+        background-color:transparent; 
+        @include space(padding, all, .8rem);
+        @include space(margin, top, 1.5rem);
+        @include fsize(1.5rem);
+        color: $placeholder-color;
+
+    }
+
+    textarea {
+        height: 188px;
+    }
+
+    button {
+        @include space(margin, top, 3rem);
+        border-radius: 10px;
+        background-color: $btn-bg-color;
+        color: $dark-main-color;
+    }
+
+  }
+   
+   span {
+       @include space(margin, top, 6.2rem);
+       display:block;
+       font-size: 2rem;
+   }
+
+   .socmed {
+       @include space(padding, y, 4.0rem, 12.6rem);
+
+       img {
+           @include space(margin, right, $sm);
+       }
+   }
+
+   .column-right {
+       display:none;
+
+       @include mq(large) {
+           display:block;
+       }
+   }
+
+   @include mq(large) {
+     
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+
+.contact-form {
+    @include space(padding, x, 12rem);
+}
+
+.column-right {
+    width: 60%;
+    max-width: 952px;
+    height: 900px;
+    
+   
+   
+    img {
+        @include image;
+        height: 100%;
+        
+    }
+}
+
+}
+
+}
+
+
+.footer {
+    @include flex-center(column, horizontal);
+    background-color: $footer-bg-color;
+    color: $footer-text-color;
+}
+
+.footer-inner {
+    width: 100%;
+    @include space(padding, top, 11rem);
+    @include space(padding, bottom, 18rem);
+    @include flex-center(column, horizontal);
+
+    > * {
+        @include space(margin, y, 3.5rem);
+    }
+
+   
+    .heading {
+        @include space(margin, y, 3.5rem);
+        color: $light-main-color;
+    }
+
+
+    .address {
+        @include space(margin, bottom, 1.6rem);
+    }
+
+    span {
+        @include space(margin, left, 1.6rem);
+        @include fsize(1.2rem);
+    }
+
+    .socmed {
+        @include space(margin, top, 3rem);
+
+       img {
+        @include space(margin, right, 2.2rem);
+       }
+    }
+
+
+    .tags {
+        @include fsize(1.4rem);
+        @include flex-center(column, horizontal);
+    }
+
+    .tag-wrapper {
+        display:flex;
+        flex-wrap: wrap;
+        @include space(padding, x, $sm);
+        @include component-dimension(520px, $height: auto);
+        
+        
+
+        .tag-links {
+            @include space(padding, all, 1.5rem, 2rem);
+            @include space(margin, all, .7rem);
+            border: 1px solid $border-tag-color;
+            text-align:center;    
+        }
+    }
+
+    @include mq(xLarge) {
+        flex-direction:row;
+        justify-content: space-evenly;
+        align-items:flex-start;
+       
+        
+
+        .logo {
+            @include space(padding, top, 31rem);
+        }
+
+        .tag-wrapper {
+            width: 400px;
+            padding: 0;
+          
+        
+        }
+    }
+
+}
+
+.footer-nav {
+    display:none;
+
+    @include mq(large) {
+        width: 100%;
+        @include flex-center(row, horizontal);
+        background-color: $footer-secondary-bg-color;
+        color: $dark-main-color;
+        font-size: 1.5rem;
+
+        li {
+            @include space(margin, right, 4.5rem);
+            @include space(padding, y, 1.5rem);
+        }
+    }
+}
+
+.copyright {
+    @include space(padding,y, 2rem);
+}
+

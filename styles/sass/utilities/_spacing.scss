@@ -1,0 +1,26 @@
+$xs : 1rem;
+$sm : 2rem;
+$md : 3rem;
+$lg : 4rem;
+$xl : 4.5rem;
+$xxl: 5rem;
+
+@mixin space($type:margin, $direction:all, $amount:$xs, $amount-sec:null){
+	@if $type == padding {
+		@if $direction == all {padding: $amount $amount-sec;}  
+        @else if $direction == x {padding: 0 $amount;}
+        @else if $direction == y {padding: $amount 0;}
+        @else if $direction == top {padding-top:$amount;} 
+        @else if $direction == left {padding-left:$amount;} 
+        @else if $direction == right {padding-right:$amount;} 
+        @else if $direction == bottom {padding-bottom:$amount;}
+	} @else {
+		@if $direction == all{margin: $amount $amount-sec;}
+        @else if $direction == x {margin: 0 $amount;}
+        @else if $direction == y {margin: $amount 0;}
+        @else if $direction == top {margin-top:$amount;}
+        @else if $direction == left {margin-left:$amount;} 
+        @else if $direction == right {margin-right:$amount;}
+        @else if $direction == bottom {margin-bottom:$amount;}
+	}
+}

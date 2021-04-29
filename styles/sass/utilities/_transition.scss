@@ -1,0 +1,17 @@
+/** Transition **/
+
+@mixin transition ($target, $duration, $state) {
+    @if $target == all {
+        transition: all $duration $state;
+    }
+
+    @if $target == background {
+        transition:background $duration $state;
+    }
+
+    @if $target == opacity {
+        transition: opacity $duration $state;
+    }
+}
+
+

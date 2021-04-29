@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/*** FONT FAMILY ***/
+
+$body-font: 'Roboto', sans-serif;
+$heading-font:'Roboto', sans-serif;
+
+$default-font: 'Roboto', sans-serif;
+
+ /*** FONT WEIGHT ***/
+
+ $f-weight-bold: 700;
+ $f-weight-light: 300;
+ $f-weight-normal: normal;
+
+/**FONT SIZE **/
+$base: 62.5%;
+$fsize-navLinks-sm:1.8rem;
+$fsize-navLinks-lg:2rem;
+$fsize-hero-sm: 2rem;
+$fsize-hero-lg: 7.5rem;
+
+
+$fsize-heading-sm: 3rem;
+$fsize-heading-lg: 6rem; // h2
+$fsize-subheading-sm: 1.5rem;
+$fsize-subheading-lg: 2rem; //p
+$fsize-body-sm: 2.2rem;
+$fsize-body-lg: 3rem; //h3
+
+
+$fsize-btn: 1.5rem; 
+$fsize-card-body-lg: 1.4rem;
+$fsize-card-heading-sm: 2.5rem;
+$fsize-card-heading-lg: 4.5rem; 
+
+
+
+
+@mixin fsize($font-size, $letter-spacing: null,  $line-height:1.2 , $font-weight: $f-weight-normal ) {
+    font-size: $font-size;
+    line-height: $line-height;
+
+    @if $font-weight == normal {font-weight: normal;} 
+    
+    @else {font-weight: $font-weight;}
+
+    @if $letter-spacing==normal {letter-spacing: normal;}
+    
+    @else {letter-spacing: $letter-spacing;}
+    // @if $line-height== normal {
+    //   line-height: normal;
+    // } @else {
+    //   line-height: $line-height / $font-size;
+    // }
+  }
+  
+
+

@@ -1,0 +1,40 @@
+
+      @import 'flex';
+      
+      /***Using Flex***/
+
+
+    /**Vertical & Horizontal**/
+
+
+    // @mixin flex-center-vt {
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+
+    /**Column**/
+
+
+    // /**Horizontal Only**/
+
+    // @mixin flex-center-horizontal {
+    //     display:flex;
+    //     justify-content: center;
+    // }
+    
+    // /**Vertical Only**/
+
+    // @mixin flex-center-vertical {
+    //     display:flex;
+    //     align-items: center;
+    // }
+
+
+          /***Using Grid***/
+
+
+    @mixin grid-center {
+        display: grid;
+        place-items: center;
+            
+        }

@@ -1,0 +1,39 @@
+
+
+
+/***EQUAL WIDTH AND HEIGHT***/
+
+
+
+@mixin body-dimension($max-width:1920px, $width:100%, $height:$width){
+    
+    width: $width;
+    max-width: $max-width;
+    height: $height;
+
+    @if $max-width < 2000 {
+        margin:auto;
+    }
+    
+}
+
+
+
+@mixin component-dimension($max-width:null, $height:$max-width, $width: 100%) {
+    width: $width;
+    max-width: $max-width;
+    
+    @if $height == auto {
+        height: auto;
+    }
+    @else   {
+        height: $height;
+    }
+
+
+
+    // @if $max-width != $width {
+    //     margin: auto;
+    // }
+}
+

@@ -1,0 +1,17 @@
+
+@mixin backgroundImage($filepath, $filename, $position:null, $attachment:null) {
+    background: {
+        image: url(#{$filepath}#{$filename});
+        repeat: no-repeat;
+        size: cover;
+        position:$position;
+        attachment: $attachment;
+    }
+}
+
+
+
+
+
+
+

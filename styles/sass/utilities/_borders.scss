@@ -1,0 +1,32 @@
+@mixin border($side, $width, $type, $color) {
+    //apply border to all sides
+   @if $side == all {
+    border: $width $type $color;
+   }
+   //apply border to the top only
+   @else if $side == top {
+       border-top: $width $type $color;
+   }
+   //apply border to the bottom only
+   @else if $side == bottom {
+    border-bottom: $width $type $color;
+   }
+   //apply border to the top & bottom only
+   @else if $side == topBottom {
+    border-top: $width $type $color;
+    border-bottom: $width $type $color;
+   }
+   //apply border to the right only
+   @else if $side == right {
+    border-right: $width $type $color;
+   }
+   //apply border to the left only
+   @else if $side == left {
+    border-left: $width $type $color;
+   }
+    //apply border to the left & right only
+   @else if $side == leftRight {
+    border-right: $width $type $color;
+    border-left: $width $type $color;
+   }
+}

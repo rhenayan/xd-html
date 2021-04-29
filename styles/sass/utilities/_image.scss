@@ -1,0 +1,11 @@
+
+ @mixin image($max-width: 100%, $object-fit:null) {
+     display:block;
+     max-width: $max-width;
+     width: 100%;
+     height:auto;
+     object-fit: $object-fit;
+ }
+
+
+

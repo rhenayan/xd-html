@@ -1,0 +1,82 @@
+/***Flex Column***/
+
+
+$display:flex;
+
+@mixin flex-direction($direction) {
+    display: $display;
+
+    @if  $direction == row {
+        flex-direction: row;
+    }
+    @else {
+        flex-direction:column;
+    }
+}
+
+
+/** Flex Center **/
+
+@mixin flex-center($direction, $dimension) {
+    @include flex-direction($direction);
+
+    @if $direction == column {
+
+        @if $dimension == vertical {
+            justify-content: center;
+        }
+        @if $dimension == horizontal {
+            align-items: center;
+        }
+
+        @if $dimension == both {
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    @else if $direction == row {
+
+        @if $dimension == vertical {
+            align-items: center;
+        }
+
+        @else if $dimension == horizontal {
+            justify-content: center;
+        }
+
+        @else if $dimension == both {
+            justify-content: center;
+            align-items:center;
+        }
+
+
+    }
+
+}
+/**Flex Spacing**/
+
+@mixin flex-spacing ($direction, $space) {
+    display: $display;
+
+    @if $direction == row {
+        flex-direction: row;
+    }
+    @else {
+        flex-direction:column;
+    }
+
+    @if $space == space-between {
+        justify-content: space-between;
+    }
+    @else if $space == space-around {
+        justify-content: space-around;
+    }
+    @else if $space == space-evenly {
+        justify-content: space-evenly;
+    }
+}
+
+
+

@@ -1,0 +1,60 @@
+@import 'dimension';
+
+
+/***Absolute Position**/
+
+@mixin abs-position($all:true, $top:null, $right:null, $bottom:null, $left:null) {
+    position:absolute;
+
+    @if $all == true {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    @else {
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+    }
+}
+
+
+/***Fixed Position or Sticky Positioning**/
+
+@mixin fixed-position($type, $value, $unit) {
+
+    // select based on the position type
+    @if $type == fixed {
+        position:fixed;
+    }
+
+    @if $type == sticky {
+        position:sticky;
+    }
+    
+    //select based on the location and distance
+   @if $value == top {
+       top: $unit;
+   }
+
+   @else if $value == right {
+       right: $unit;
+   }
+
+   @else if $value == bottom {
+        bottom: $unit;
+   }
+
+   @else if $value == left {
+        left: $unit;
+   }
+}
+
+
+
+
+
+

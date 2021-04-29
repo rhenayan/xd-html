@@ -1,0 +1,17 @@
+/***Mobile First Approach***/
+
+
+$breakpoints: (
+    small:300px,
+    medium: 768px,
+    large: 1024px,
+    xLarge: 1280px,
+    xxLarge: 1440px
+);
+
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media only screen and ( min-width: #{map-get( $breakpoints, $breakpoint )}) { @content; }
+    }
+}
+

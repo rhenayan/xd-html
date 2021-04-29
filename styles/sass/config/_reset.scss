@@ -1,0 +1,33 @@
+
+/*input elements
+
+input,
+button,
+textarea,
+select 
+
+*/
+
+
+@mixin reset($type: null) {
+    @if $type == spacing { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @if $type == pseudo {
+        &::before,
+        &::after {margin: 0; padding: 0; box-sizing: border-box; }}
+
+    @if $type == list { margin: 0; padding: 0; list-style: none; 
+        & li { margin: 0; padding: 0; }
+    } 
+
+    @if $type == anchor { text-decoration: none; display:block; color:inherit;}
+
+    @if $type == input { font:inherit;}
+
+    @if $type == everything { float: none; position: static; height: auto; width: auto; margin: 0; padding: 0; background-color: transparent; border: none; list-style: none; } 
+
+    
+    @if $type == heading {
+        h1, h2, h3, h4 {font-weight: normal;}
+    }
+}
