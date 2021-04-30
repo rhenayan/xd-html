@@ -302,7 +302,7 @@ hr {
         }
 
         &.premium {
-            @include backgroundImage('..assets/images', 'premium-mob.png', center)
+            @include backgroundImage('../assets/images', 'premium-mob.png', center)
         }
         
     }

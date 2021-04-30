@@ -239,7 +239,7 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(../assets/imageshero-bg-mob.png);
+  background-image: url(../assets/images/hero-bg-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: cover;
@@ -387,21 +387,21 @@ hr {
 }
 
 .programs-container .program.classic {
-  background-image: url(../assets/imagesclassic-mob.png);
+  background-image: url(../assets/images/classic-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .programs-container .program.standard {
-  background-image: url(../assets/imagesstandard-mob.png);
+  background-image: url(../assets/images/standard-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .programs-container .program.premium {
-  background-image: url(..assets/imagespremium-mob.png);
+  background-image: url(../assets/images/premium-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -504,21 +504,21 @@ hr {
 }
 
 .about-main .woman.one {
-  background-image: url(../assets/imagesabout-woman1-mob.png);
+  background-image: url(../assets/images/about-woman1-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .about-main .woman.two {
-  background-image: url(../assets/imagesabout-woman2-mob.png);
+  background-image: url(../assets/images/about-woman2-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .about-main .woman.three {
-  background-image: url(../assets/imagesabout-woman3-mob.png);
+  background-image: url(../assets/images/about-woman3-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -670,7 +670,7 @@ hr {
 }
 
 .classes-card-wrapper .card {
-  background-image: url(../assets/imagescardio-fitness-mob.png);
+  background-image: url(../assets/images/cardio-fitness-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1072,21 +1072,21 @@ hr {
 }
 
 .news .card-image.left {
-  background-image: url(../assets/images/marathon-mob.png);
+  background-image: url(../assets/images//marathon-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .news .card-image.middle {
-  background-image: url(../assets/images/workout-kettlebell-mob.png);
+  background-image: url(../assets/images//workout-kettlebell-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .news .card-image.right {
-  background-image: url(../assets/images/running-track-mob.png);
+  background-image: url(../assets/images//running-track-mob.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1094,19 +1094,19 @@ hr {
 
 @media only screen and (min-width: 1024px) {
   .news .card-image.left {
-    background-image: url(../assets/images/marathon-desk.png);
+    background-image: url(../assets/images//marathon-desk.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   .news .card-image.middle {
-    background-image: url(../assets/images/workout-kettlebell-desk.png);
+    background-image: url(../assets/images//workout-kettlebell-desk.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
   .news .card-image.right {
-    background-image: url(../assets/images/running-track-desk.png);
+    background-image: url(../assets/images//running-track-desk.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
