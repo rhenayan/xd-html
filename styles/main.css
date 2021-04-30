@@ -48,6 +48,8 @@ html {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
 }
 
 body {
@@ -145,6 +147,7 @@ hr {
   font-size: 1.8rem;
   line-height: 1.2;
   font-weight: normal;
+  background-color: #ffffff;
 }
 
 .navbar .menu-items {
@@ -207,7 +210,6 @@ hr {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    background-color: #ffffff;
   }
   .navbar .nav-link {
     margin: 0 2rem;
